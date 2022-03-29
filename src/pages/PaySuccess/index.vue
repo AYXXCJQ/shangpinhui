@@ -22,7 +22,7 @@
     name: 'PaySuccess',
     //组件内守卫
     beforeRouteEnter (to, from, next) {
-      if(from.path="/pay"){
+      if(from.path=="/pay"){
         next();
       }else{
         next(false);

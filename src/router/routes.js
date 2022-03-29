@@ -36,7 +36,14 @@ export default [{
     {
         path: '/paysuccess',
         component: PaySuccess,
-        meta: { show: true }
+        /* 只有从支付界面, 才能跳转到支付成功的界面 */
+        beforeEnter(to, from, next) {
+            if (from.path === '/pay') {
+                next()
+            } else {
+                next('/pay')
+            }
+        }
     },
     {
         path: '/pay',
